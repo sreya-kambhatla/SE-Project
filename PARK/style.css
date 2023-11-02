@@ -1,0 +1,153 @@
+.header-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    width: 100%;
+    height: 56px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .home, .testimonals, .subscriptions, .app, .about-us, .contact {
+    display: inline-block;
+    width: auto;
+    font-size: 10px;
+    padding: 0 25px; 
+
+  }
+
+  .title {
+    font-size:36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0px 1.75px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+}
+
+body {
+    background-image: url(images/parking-garage.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .center-box {
+    width: 700px;
+    height: 460px;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+  }
+  
+  .small-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    width: 350px;
+    height: 275px;
+    top: 57%;
+    left: 50%;
+    text-align: center;
+    margin-top: -137.5px;
+    margin-left: -175px;
+    border: 1px solid white;
+    border-radius: 2px; 
+  }
+  
+.location-parking {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+  .small-header {
+    text-align: left;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .input-container {
+    position: relative;
+  }
+  
+  #input-field {
+    width: 300px;
+    height: 30px;
+    background-color: white;
+    position: relative;
+    padding-left: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+  }
+  
+  .search-icon {
+    width: 20px; 
+    height: 20px; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    z-index: 1;
+
+  }
+ .left-text, .right-text {
+    display: inline-block;
+    width: 120px;
+
+ }
+ .left-text, .right-text {
+    text-align: left;
+  }
+
+  .right-text {
+    margin-left: 50px;
+  }
+
+  #start-hour, #end-hour {
+    display: inline-block;
+    padding: 0;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+    margin-bottom: 5px;
+  }
+
+  #start-hour {
+   margin-right: 20px;
+  }
+
+  #start-time, #end-time {
+    display: inline-block;
+    padding: 0;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+  }
+
+  #start-time {
+    margin-right: 20px;
+   }
+
+   #search-button {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+    background-color: rgba(255,114,89,255);
+   }
