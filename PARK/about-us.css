@@ -1,22 +1,23 @@
- .header-box {
+.header-box {
     display: flex;
     justify-content: flex-end;
+    align-items: top;
     width: 100%;
-    height: 80px;
+    height: 56px;
     background-color: rgba(255, 255, 255, 0.85);
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
     align-items: center;
   }
   
- .home, .testimonals, .subscriptions, .app, .about-us, .contact {
+.home, .testimonials, .subscriptions, .app, .about-us, .contact {
     display: inline-block;
     width: auto;
-    font-size: 13px;
+    font-size: 10px;
     padding: 0 25px; 
     text-decoration: none;
     color: black;
-  }
+}
 
  body {
     background-image: url(images/parking-garage.jpeg);
@@ -28,79 +29,122 @@
 
   .center-box {
     background-color: white;
-    width: 1000px;
-    height: 630px;
-    position: absolute;
-    margin-top: 2%;
-    margin-left: 17%;
+    width: 70%;
+    height: 87vh;
+    position: relative;   
+    margin-top: 3vh; 
+    margin-left: 30vh;
   }
 
 .title {
-    font-size: 36px;
+    font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     font-weight: 700;
-    margin-top: 30px;
+    padding-top: 3%;
+    margin: 0;
 }
 
 .subtitle {
-    font-size: 12px;
+    font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    width: 450px;
-    margin: 0 auto;
+    width: 60vh;
+    margin-top: 4vh;
+    margin-left: 40vh;
+    margin-bottom: 0;
+    padding-bottom: 0;
     line-height: 1.5;
     color: rgba(65,75,90,255);
 }
-
-.pfp-1 {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    margin-top: 60px;
-    margin-left: 190px;
+.carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.carousel-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 4%;
+    left: 20%;
+    width: 100%;
+    height: 100%;
 }
 
-.pfp-2, .pfp-3, .pfp-4, .pfp-5, .pfp-6  {
-    width: 75px;
-    height: 75px;
+.carousel-item.active {
+    display: block;
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#prev img, #next img {
+    width: 70%;
+    height: 5vh;
+}
+
+#prev {
+    left: 5%;
+    top: 60%;
+}
+
+#next {
+    right: 5%;
+    top: 60%;
+}
+
+.pfp {
+    width: 7%;
+    height: 11%;
     border-radius: 50%;
-    margin-top: 60px;
-    margin-left: 30px;
+    cursor: pointer;
+    margin-right: 2%;
+    margin-bottom: 0%;
+}
+
+.pfp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    margin-bottom: 0%;
 }
 
 .larger-pfp {
-    width: 270px;
-    height: 270px;
-    margin-top: 30px;
-    margin-left: 180px;
+    width: 30%;
+    height: 45%;
+    margin-right: 
+}
+
+.name, .job-title, .job-desc {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .name {
-    text-align: right;
-    font-size: 21px;
+    margin-top: -23%;
+    font-size: 20px;
     font-weight: 501;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: -230px;
-    margin-right: 250px;
-}
-.job-title, .job-desc {
-    color: rgba(65,75,90,255);
 }
 
 .job-title {
-    text-align: right;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-right: 320px;
-    margin-top: -15px;
+    font-size: 14px;
+    margin-top: -1.5%;
 }
 
 .job-desc {
-    text-align: center;
-    font-size: 14px;
-    width: 300px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 520px;
-
+    font-size: 12px;
+    width: 29%;
+    margin-left: 36%;
+    line-height: 1.5;
 }
