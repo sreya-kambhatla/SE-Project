@@ -15,6 +15,8 @@
     width: auto;
     font-size: 10px;
     padding: 0 25px; 
+    text-decoration: none;
+    color: black;
 
   }
 
@@ -150,4 +152,5 @@ body {
     border: 1px solid #ccc;
     border-radius: 20px; 
     background-color: rgba(255,114,89,255);
-   }
+    cursor: pointer;
+  }
