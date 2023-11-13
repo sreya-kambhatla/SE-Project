@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="results.css">
+
+<html>
+    <body>
+        <header>
+             <!-- top header menu for 
+      navigating through the different
+      site through links-->
+      <!-- NOTE: header might not be hardcoded later on-->
+      <div class="header-box">
+        <a href="homepage.html" class="home">HOME</a>
+        <a href="testimonals.html" class="testimonals">TESTIMONIALS</a>
+        <a href="subscriptions.html" class="subscriptions">SUBSCRIPTIONS</a>
+        <a href="app.html" class="app">APP</a>
+        <a href="about-us.html" class="about-us">ABOUT US</a>
+        <a href="contact.html" class="contact">CONTACT</a>
+      </div>
+       <!-- link to css for homepage-->
+        </header>
+
+       <div class="sidebar">
+        <p class="location-parking">Philadelphia Parking</p>
+        <p class="small-header">Book Parking Near</p>
+        <form action="http://www.example.com/subscribe.php" method="get">
+            <div class="input-container">
+                <img src="images/magnifying-glass.png" alt="Magnifying Glass" class="search-icon">
+                <input type="text" id="input-field" name="location" placeholder="Address, Place, City, or Venue">
+            </div>
+            <br>
+            <div class="time-container">
+                <div class="left-text">Arrive By</div>
+                <div class="right-text">Leave By</div>
+                <input type="date" id="start-hour" name="start-hour"> 
+                <input type="date" id="end-hour" name="end-hour"> 
+                <input type="time" id="start-time" name="start-time">
+                <input type="time" id="end-time" name="end-time">   
+            </div>
+        </form>
+       </div> 
+    </body>
+</html>

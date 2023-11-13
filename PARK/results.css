@@ -1,0 +1,109 @@
+.header-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    width: 100%;
+    height: 56px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+.home, .testimonals, .subscriptions, .app, .about-us, .contact {
+    display: inline-block;
+    width: auto;
+    font-size: 10px;
+    padding: 0 25px; 
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar {
+    width: 300px;
+    height: 700px;
+    background-color: rgba(246,247,249,255);
+    position: absolute;
+    left: 20%
+}
+
+.location-parking {
+    font-size:16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.small-header {
+    text-align: left;
+    padding: 10px;
+    font-size: 12px;
+    position: absolute;
+    top: 7%;
+}
+
+.input-container {
+    position: relative;
+    padding-top: 15px;
+    padding-left: 23px;
+}
+
+.search-icon {
+    width: 20px; 
+    height: 20px; 
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    z-index: 1;
+}
+
+#input-field {
+    width: 250px;
+    height: 26px;
+    background-color: white;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+    padding-left: 30px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.left-text, .right-text {
+    display: inline-block;
+    width: 140px;
+    font-size: 12px;
+}
+
+.left-text, .right-text {
+    text-align: left;
+  }
+#start-hour, #end-hour {
+display: inline-block;
+padding: 0;
+width: 120px;
+height: 25px;
+border: 1px solid #ccc;
+border-radius: 2px; 
+margin-bottom: 5px;
+}
+
+#start-hour {
+margin-right: 20px;
+margin-left: 20px;
+}
+
+#start-time, #end-time {
+display: inline-block;
+padding: 0;
+width: 120px;
+height: 25px;
+border: 1px solid #ccc;
+border-radius: 2px; 
+margin-bottom: 5px;
+}
+
+#start-time {
+margin-right: 20px;
+margin-left: 20px;
+}
