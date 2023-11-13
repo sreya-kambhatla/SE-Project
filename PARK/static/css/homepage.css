@@ -1,22 +1,24 @@
 .header-box {
-    display: flex;
-    justify-content: flex-end;
-    align-items: top;
-    width: 100%;
-    height: 56px;
-    background-color: rgba(255, 255, 255, 0.85);
-    margin: 0;
-    padding: 0;
-    align-items: center;
-  }
-  
-  .home, .testimonals, .subscriptions, .app, .about-us, .contact {
-    display: inline-block;
-    width: auto;
-    font-size: 10px;
-    padding: 0 25px; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: top;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
 
-  }
+.home, .testimonals, .subscriptions, .app, .about-us, .contact {
+  display: inline-block;
+  width: auto;
+  font-size: 13px;
+  padding: 0 4vh; 
+  text-decoration: none;
+  color: black;
+
+}
 
   .title {
     font-size:36px;
@@ -24,11 +26,11 @@
     font-weight: 400;
     text-align: center;
     text-shadow: 0px 1.75px 2px rgba(0, 0, 0, 0.5);
-    margin-top: 40px;
+    margin-top: 6vh;
 }
 
 body {
-    background-image: url(images/parking-garage.jpeg);
+    background-image: url(/static/images/parking-garage.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
@@ -59,8 +61,49 @@ body {
     margin-left: -175px;
     border: 1px solid white;
     border-radius: 2px; 
+    padding-left: 1%;
+    padding-right: 1%;
   }
-  
+.line-container {
+  padding: 0%;
+  margin: 0;
+  height: 10%;
+  text-align: left;
+  margin-top: -4%;
+  /* border: 1px solid #ccc; */
+  font-size: 14px;
+}
+
+  .hourly, .monthly {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0;
+  }
+  .hourly {
+    padding-left: 5%;
+  }
+  .monthly {
+    padding-left: 5%;
+  }
+
+  .hourly::before, .monthly::before {
+    content: "";
+    position: absolute;
+    bottom: -2px; /* Position it at the bottom of the text */
+    width: 0; /* Start with a width of 0 */
+    height: 2px;
+    background-color: blue;
+    transition: width 0.3s ease; /* Animate the width */
+}
+
+.hourly.active::before, .monthly.active::before {
+   width: 75%; /* Expand width when active */
+}
+
 .location-parking {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
@@ -150,4 +193,5 @@ body {
     border: 1px solid #ccc;
     border-radius: 20px; 
     background-color: rgba(255,114,89,255);
-   }
+    cursor: pointer;
+  }
