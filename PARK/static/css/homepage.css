@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.home, .testimonals, .subscriptions, .app, .about-us, .contact {
+.home, .testimonials, .subscriptions, .app-page, .about-us, .contact {
   display: inline-block;
   width: auto;
   font-size: 13px;
@@ -63,18 +63,23 @@ body {
     border-radius: 2px; 
     padding-left: 1%;
     padding-right: 1%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
   }
 .line-container {
   padding: 0%;
   margin: 0;
-  height: 10%;
+  height: 9%;
   text-align: left;
   margin-top: -4%;
-  /* border: 1px solid #ccc; */
+  margin-bottom: 3%;
+  width: 97%;
+  border-bottom: 2px solid #ccc;
   font-size: 14px;
 }
 
   .hourly, .monthly {
+    font-size: 14px;
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -84,7 +89,7 @@ body {
     padding-bottom: 0;
   }
   .hourly {
-    padding-left: 5%;
+    padding-left: 2%;
   }
   .monthly {
     padding-left: 5%;
@@ -93,31 +98,42 @@ body {
   .hourly::before, .monthly::before {
     content: "";
     position: absolute;
-    bottom: -2px; /* Position it at the bottom of the text */
-    width: 0; /* Start with a width of 0 */
+    width: 0; /* Start with width of 0 */
     height: 2px;
-    background-color: blue;
+    bottom: -60%;
+    background-color: rgba(0,132,71,255);
     transition: width 0.3s ease; /* Animate the width */
 }
 
-.hourly.active::before, .monthly.active::before {
-   width: 75%; /* Expand width when active */
+.hourly.active::before {
+  width: 110%; /* Expand width when active */
+  left: -3%;
 }
+.monthly.active::before {
+   width: 90%; /* Expand width when active */
+  left: 20%;
+  }
 
 .location-parking {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 7%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
   .small-header {
+    padding-top: 1%;
     text-align: left;
-    padding: 10px;
-    font-size: 12px;
+    font-size: 14px;
+    color: rgba(106,127,158,255);
   }
 
   .input-container {
     position: relative;
+    margin: 0%;
+    margin-left: -6%;
+    margin-top: 2%;
+    width: 110%;
   }
   
   #input-field {
@@ -128,6 +144,7 @@ body {
     padding-left: 30px;
     border: 1px solid #ccc;
     border-radius: 2px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
   .search-icon {
@@ -138,47 +155,90 @@ body {
     transform: translateY(-50%);
     left: 15px;
     z-index: 1;
+    margin-left: 5%;
 
+  }
+
+  .time-container {
+    color: rgba(106,127,158,255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .time-text {
+    position: relative;
+    /* border: 1px solid #ccc; */
+    width: 95%;
+    height: 2vh;
+    text-align: left;
+    margin-left: 1%;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
  .left-text, .right-text {
     display: inline-block;
-    width: 120px;
-
+    font-size: 14px;
  }
- .left-text, .right-text {
-    text-align: left;
-  }
 
-  .right-text {
-    margin-left: 50px;
-  }
+ .left-text {
+  margin-left: 0;
+ }
 
-  #start-hour, #end-hour {
+ .right-text {
+  margin-left: 40%;
+}
+
+.date-container {
+  display: flex;
+  /* border: 1px solid #ccc; */
+  height: 4.5vh;
+  margin-top: -2%;
+  margin-bottom: 2%;
+}
+
+  #start-date, #end-date {
     display: inline-block;
     padding: 0;
-    width: 150px;
-    height: 30px;
+    padding-left: 1%;
+    height: 4.5vh;
+    width: 45%;
     border: 1px solid #ccc;
     border-radius: 2px; 
     margin-bottom: 5px;
+    text-align: left;
+
   }
 
-  #start-hour {
-   margin-right: 20px;
-  }
+ #start-date {
+  margin-left: 2%;
+ } 
+#end-date {
+  margin-left: 10%;
+}
+
+.times {
+  display: flex;
+  /* border: 1px solid #ccc; */
+  height: 4.5vh;
+}
 
   #start-time, #end-time {
     display: inline-block;
-    padding: 0;
-    width: 150px;
-    height: 30px;
+    padding: 0%;
+    padding-left: 1%;
+    height: 4.5vh;
+    width: 45%;
     border: 1px solid #ccc;
     border-radius: 2px; 
+    margin-bottom: 5px;
+    text-align: left;
   }
 
-  #start-time {
-    margin-right: 20px;
-   }
+ #start-time {
+  margin-left: 2%;
+ } 
+#end-time {
+  margin-left: 10%;
+}
 
    #search-button {
     text-align: center;
