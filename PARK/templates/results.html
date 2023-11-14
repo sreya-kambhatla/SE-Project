@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/results.css">
+
+    </head>
+    <body>
+        <header>
+             <!-- top header menu for 
+      navigating through the different
+      site through links-->
+      <!-- NOTE: header might not be hardcoded later on-->
+      <div class="header-box">
+        <a href="homepage.html" class="home">HOME</a>
+        <a href="testimonals.html" class="testimonals">TESTIMONIALS</a>
+        <a href="subscriptions.html" class="subscriptions">SUBSCRIPTIONS</a>
+        <a href="app.html" class="app">APP</a>
+        <a href="about-us.html" class="about-us">ABOUT US</a>
+        <a href="contact.html" class="contact">CONTACT</a>
+      </div>
+        </header>
+       <div id="container">
+        <div class="sidebar">
+            <div class="line-container">
+                <p class="hourly">Hourly</p>
+                <p class="monthly">Monthly</p>
+            </div>
+            <p class="title">Find Parking</p>
+            <p class="small-header">Book Parking Near</p>
+            <form method="get">
+                <div class="input-container">
+                    <img src="/static/images/magnifying-glass.png" alt="Magnifying Glass" class="search-icon">
+                    <input type="text"  id="location" 
+                    placeholder="Address, Place, City, or Venue">
+                   <!-- flaskLocation basically holds a value for data-Location
+                    if a location was entered and '{{ flaskLocation}}''
+                    string literal if nothing was entered-->
+                    <p id="flaskLocation" style="display: none;" 
+                    data-location="{{ flaskLocation }}" userEntry ="{{ userEntered }}"></p>
+                </div>
+                <div class="time-container">
+                    <div class="left-text">Arrive By</div>
+                    <div class="right-text">Leave By</div>
+                    </br>
+                    <input type="date" id="start-date" name="start-date"> 
+                    <input type="date" id="end-date" name="end-date"> 
+                    </br>
+                    <input type="time" id="start-time" name="start-time">
+                    <input type="time" id="end-time" name="end-time">   
+                </div>
+            </form>
+            <div class="search-container">
+                <button id="update-search" class="hidden">Update Search</button>
+                <p id="cancel" class="hidden">Cancel</p>
+            </div>
+        </div> 
+        <div id="map">
+            <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AnZmfnNOjVj5o61isXoOcep8SpaYqk3Tpye9-Mgu7iPCGjXntIKrNehxtWSUVzGe&callback=initMap" async defer></script>
+        </div>
+    </body>
+
+    <script src="/static/scripts/results.js"></script>
+</html>
