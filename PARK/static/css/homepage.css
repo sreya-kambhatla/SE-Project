@@ -1,0 +1,257 @@
+.header-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: top;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.home, .testimonials, .subscriptions, .app-page, .about-us, .contact {
+  display: inline-block;
+  width: auto;
+  font-size: 13px;
+  padding: 0 4vh; 
+  text-decoration: none;
+  color: black;
+
+}
+
+  .title {
+    font-size:36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0px 1.75px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 6vh;
+}
+
+body {
+    background-image: url(/static/images/parking-garage.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .center-box {
+    width: 700px;
+    height: 460px;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+  }
+  
+  .small-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    width: 350px;
+    height: 275px;
+    top: 57%;
+    left: 50%;
+    text-align: center;
+    margin-top: -137.5px;
+    margin-left: -175px;
+    border: 1px solid white;
+    border-radius: 2px; 
+    padding-left: 1%;
+    padding-right: 1%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+.line-container {
+  padding: 0%;
+  margin: 0;
+  height: 9%;
+  text-align: left;
+  margin-top: -4%;
+  margin-bottom: 3%;
+  width: 97%;
+  border-bottom: 2px solid #ccc;
+  font-size: 14px;
+}
+
+  .hourly, .monthly {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0;
+  }
+  .hourly {
+    padding-left: 2%;
+  }
+  .monthly {
+    padding-left: 5%;
+  }
+
+  .hourly::before, .monthly::before {
+    content: "";
+    position: absolute;
+    width: 0; /* Start with width of 0 */
+    height: 2px;
+    bottom: -60%;
+    background-color: rgba(0,132,71,255);
+    transition: width 0.3s ease; /* Animate the width */
+}
+
+.hourly.active::before {
+  width: 110%; /* Expand width when active */
+  left: -3%;
+}
+.monthly.active::before {
+   width: 90%; /* Expand width when active */
+  left: 20%;
+  }
+
+.location-parking {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 7%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+  .small-header {
+    padding-top: 1%;
+    text-align: left;
+    font-size: 14px;
+    color: rgba(106,127,158,255);
+  }
+
+  .input-container {
+    position: relative;
+    margin: 0%;
+    margin-left: -6%;
+    margin-top: 2%;
+    width: 110%;
+  }
+  
+  #input-field {
+    width: 300px;
+    height: 30px;
+    background-color: white;
+    position: relative;
+    padding-left: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .search-icon {
+    width: 20px; 
+    height: 20px; 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    z-index: 1;
+    margin-left: 5%;
+
+  }
+
+  .time-container {
+    color: rgba(106,127,158,255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .time-text {
+    position: relative;
+    /* border: 1px solid #ccc; */
+    width: 95%;
+    height: 2vh;
+    text-align: left;
+    margin-left: 1%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+ .left-text, .right-text {
+    display: inline-block;
+    font-size: 14px;
+ }
+
+ .left-text {
+  margin-left: 0;
+ }
+
+ .right-text {
+  margin-left: 40%;
+}
+
+.date-container {
+  display: flex;
+  /* border: 1px solid #ccc; */
+  height: 4.5vh;
+  margin-top: -2%;
+  margin-bottom: 2%;
+}
+
+  #start-date, #end-date {
+    display: inline-block;
+    padding: 0;
+    padding-left: 1%;
+    height: 4.5vh;
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+    margin-bottom: 5px;
+    text-align: left;
+
+  }
+
+ #start-date {
+  margin-left: 2%;
+ } 
+#end-date {
+  margin-left: 10%;
+}
+
+.times {
+  display: flex;
+  /* border: 1px solid #ccc; */
+  height: 4.5vh;
+}
+
+  #start-time, #end-time {
+    display: inline-block;
+    padding: 0%;
+    padding-left: 1%;
+    height: 4.5vh;
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 2px; 
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+ #start-time {
+  margin-left: 2%;
+ } 
+#end-time {
+  margin-left: 10%;
+}
+
+   #search-button {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+    background-color: rgba(255,114,89,255);
+    cursor: pointer;
+  }

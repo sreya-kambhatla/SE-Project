@@ -1,0 +1,71 @@
+<!-- Code for the front end of the 
+homepage/landing page for Park Company's website-->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <!-- top header menu for 
+      navigating through the different
+      site through links-->
+      <!-- NOTE: header might not be hardcoded later on-->
+      <div class="header-box">
+        <a href="{{ url_for('index') }}" class="home">HOME</a>
+        <a href="{{ url_for('testimonials') }}" class="testimonials">TESTIMONIALS</a>
+        <a href="{{ url_for('subscriptions') }}" class="subscriptions">SUBSCRIPTIONS</a>
+        <a href="{{ url_for('app_page') }}" class="app-page">APP</a>
+        <a href="{{ url_for('about_us') }}" class="about-us">ABOUT US</a>
+        <a href="{{ url_for('contact') }}" class="contact">CONTACT</a>
+      </div>
+    
+    </header>
+    <!-- link to css for homepage-->
+    <link rel="stylesheet" type="text/css" href="/static/css/homepage.css">
+    <!-- creating large center transparent white box
+    and title-->
+    <div class="center-box">
+      <h1 class="title">The Future of Parking starts here</h1>
+    </div>
+
+    <!--smaller center box where user can input 
+    information, such as location and times to 
+    search for parking-->
+    <div class="small-box">
+      <h2 class="location-parking">Find Parking</h2>
+      <div class="line-container">
+        <p class="hourly">Hourly</p>
+        <p class="monthly">Monthly</p>
+    </div>
+      <form action="/search" method="get">
+        <div class="small-header">Find Parking Near</div>
+        <div class="input-container">
+          <img src="/static/images/magnifying-glass.png" alt="Magnifying Glass" class="search-icon">
+          <input type="text" id="input-field" 
+          placeholder="Address, Place, City, or Venue" name="location">
+        </div>
+
+      <br>
+      <!-- time input forms-->
+      <div class="time-container">
+        <div class="time-text">
+          <div class="left-text">Arrive By</div>
+          <div class="right-text">Leave By</div>
+      </div>
+      </br>
+        <div class="date-container">
+          <input type="date" id="start-date" name="start-date"> 
+          <input type="date" id="end-date" name="end-date"> 
+        </div>
+        <div class="times">
+          <input type="time" id="start-time" name="start-time">
+          <input type="time" id="end-time" name="end-time">      
+        </div>
+      </div>
+    </div>
+    <!-- simple search button that will direct user to
+    page to pick parking spot-->
+        <button id="search-button">Search Now</button>
+      </form>
+  </body>
+  <script src="/static/scripts/homepage.js"></script>
+</html>

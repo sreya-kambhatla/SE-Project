@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="/static/css/about-us.css">
+<html>
+    <body>
+        <header>
+            <div class="header-box">
+                <a href="{{ url_for('index') }}" class="home">HOME</a>
+                <a href="{{ url_for('testimonials') }}" class="testimonials">TESTIMONIALS</a>
+                <a href="{{ url_for('subscriptions') }}" class="subscriptions">SUBSCRIPTIONS</a>
+                <a href="{{ url_for('app_page') }}" class="app-page">APP</a>
+                <a href="{{ url_for('about_us') }}" class="about-us">ABOUT US</a>
+                <a href="{{ url_for('contact') }}" class="contact">CONTACT</a>
+            </div>
+        </header>
+    <div class="center-box">
+        <h1 class="title">Who are we?</h1>
+        <p class="subtitle">Your information is secure and encrypted, 
+            consectetur adipisicing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliquat enim ad minim.</p>
+        <div class="pfp-container">
+            <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="pfp" data-target="#item1">
+            <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="pfp" data-target="#item2">
+            <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="pfp" data-target="#item3">
+            <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="pfp" data-target="#item4">
+            <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="pfp" data-target="#item5">
+            <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="pfp" data-target="#item6">
+        </div>
+        <div class="carousel">
+            <div class="carousel-item active" id="item1">
+                <img src="/static/images/blank-pfp.png" alt="Profile Picture" class="larger-pfp">
+                <p class="name">Sreya Kambhatla</p>
+                <p class="job-title">Project Manager</p>
+                <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.</p>
+            </div>
+            <div class="carousel-item" id="item2">
+                <img src="static/images/blank-pfp.png" alt="Profile Picture" class="larger-pfp"> 
+                <p class="name">Nitya	Ramachandran</p>
+                <p class="job-title">User Experience</p>
+                <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.</p>
+            </div>
+            <div class="carousel-item" id="item3">
+                <img src="static/images/blank-pfp.png" alt="Profile Picture" class="larger-pfp"> 
+                <p class="name">Brandon Hill</p>
+                <p class="job-title">Business Analyst</p>
+                <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.</p>
+            </div>
+            <div class="carousel-item" id="item4">
+                <img src="static/images/blank-pfp.png" alt="Profile Picture" class="larger-pfp"> 
+                <p class="name">Karem Baz</p>
+                <p class="job-title">Quality Assurance</p>
+                <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.</p>
+            </div>
+            <div class="carousel-item" id="item5">
+                <img src="static/images/blank-pfp.png" alt="Profile Picture" class="larger-pfp"> 
+                <p class="name">Heshen Liu</p>
+                <p class="job-title">Developer</p>
+                <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.</p>
+            </div>
+            <div class="carousel-item" id="item6">
+                <img src="static/images/blank-pfp.png" alt="Profile Picture" class="larger-pfp"> 
+                <p class="name">Christine Chukwunyere</p>
+                <p class="job-title">Developer</p>
+                <p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                     ex ea commodo consequat.</p>
+            </div>
+
+        </div> 
+        <button id="prev"><img src="/static/images/left-arrow.png" alt="&lt"></button>
+        <button id="next"><img src="/static/images/right-arrow.png" alt="&gt"></button>
+    </div>
+    <script src="/static/scripts/about-us.js"></script>
+    </body>
+</html>

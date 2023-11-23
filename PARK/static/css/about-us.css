@@ -1,0 +1,151 @@
+.header-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .home, .testimonials, .subscriptions, .app-page, .about-us, .contact {
+    display: inline-block;
+    width: auto;
+    font-size: 13px;
+    padding: 0 4vh; 
+    text-decoration: none;
+    color: black;
+
+  }
+
+  body {
+    background-image: url(/static/images/parking-garage.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+  }
+
+  .center-box {
+    background-color: white;
+    width: 70%;
+    height: 87vh;
+    position: relative;   
+    margin-top: 3vh; 
+    margin-left: 30vh;
+  }
+
+.title {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 3%;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 60vh;
+    margin-top: 4vh;
+    margin-left: 40vh;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1.5;
+    color: rgba(65,75,90,255);
+}
+.carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.carousel-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 4%;
+    left: 20%;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#prev img, #next img {
+    width: 70%;
+    height: 5vh;
+}
+
+#prev {
+    left: 5%;
+    top: 60%;
+}
+
+#next {
+    right: 5%;
+    top: 60%;
+}
+
+.pfp {
+    width: 7%;
+    height: 11%;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 2%;
+    margin-bottom: 0%;
+}
+
+.pfp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3%;
+    margin-bottom: 0%;
+}
+
+.larger-pfp {
+    width: 30%;
+    height: 45%;
+    margin-right: 0%;
+}
+
+.name, .job-title, .job-desc {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.name {
+    margin-top: -23%;
+    font-size: 20px;
+    font-weight: 501;
+}
+
+.job-title {
+    font-size: 14px;
+    margin-top: -1.5%;
+}
+
+.job-desc {
+    font-size: 12px;
+    width: 29%;
+    margin-left: 36%;
+    line-height: 1.5;
+}

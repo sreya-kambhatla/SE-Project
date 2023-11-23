@@ -1,0 +1,171 @@
+.header-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .home, .testimonials, .subscriptions, .app-page, .about-us, .contact {
+    display: inline-block;
+    width: auto;
+    font-size: 13px;
+    padding: 0 4vh; 
+    text-decoration: none;
+    color: black;
+
+  }
+
+body {
+    background-color: rgba(194,209,217,255);
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 9%;
+}
+
+.invisible-box-1 {
+    visibility: hidden;
+    position: relative;
+    width: 31%;
+    height: 60vh;
+    left: 22%;
+    margin-top: -1.5%;
+}
+
+.p1 {
+    visibility: visible;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-weight: 550;
+}
+
+.p2 {
+    visibility: visible;
+    font-size: 11px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(66, 73, 73, 255);
+    margin-top: 10%;
+}
+.location-pin, .p {
+    display: inline;
+}
+
+.location-pin {
+    visibility: visible;
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    top: 45%;
+}
+
+.p3 {
+    visibility: visible;
+    position: absolute;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(66, 73, 73, 255);
+    margin-left: 5%;
+    top: 42%;
+}
+
+.telephone, .p4 {
+    display: inline;
+}
+
+.telephone {
+    visibility: visible;
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    top: 60%;
+}
+
+.p4 {
+    visibility: visible;
+    position: absolute;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(66, 73, 73, 255);
+    margin-left: 20px;
+    top: 57%;
+}
+
+.email, .p5 {
+    display: inline;
+}
+.email {
+    visibility: visible;
+    position: absolute;
+    width: 15px;
+    height: 13px;
+    top: 74%;
+}
+
+.p5 {
+    visibility: visible;
+    position: absolute;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(66, 73, 73, 255);
+    margin-left: 3vh;
+    top: 71%;
+}
+
+.invisible-box-2 {
+    visibility: hidden;
+    background-color: white;
+    position: relative;
+    width: 25%;
+    height: 40%;
+    margin-left: 52%;
+    margin-top: -30%;
+}
+.email-field, .product, .comment, .submit {
+    display: block;
+    margin-bottom: 8%; 
+    width: 99%; 
+    border-color: white;
+    color: grey;
+    visibility: visible;
+    padding: 10px;
+
+}
+.email-field {
+    position: relative;
+    height: 5vh;
+}
+
+.product {
+    background-color: white;
+    position: relative;
+    height: 8vh;
+    width: 107%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none
+}
+
+.comment {
+    position: relative;
+}
+
+.submit {
+    width: 105%;
+    height: 8vh;
+    color: white;
+    background-color: rgba(65,75,90,255);
+    border-color: rgba(65,75,90,255);
+    cursor: pointer;
+}

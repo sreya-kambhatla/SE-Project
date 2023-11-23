@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/contact.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="header-box">
+                <a href="{{ url_for('index') }}" class="home">HOME</a>
+                <a href="{{ url_for('testimonials') }}" class="testimonials">TESTIMONIALS</a>
+                <a href="{{ url_for('subscriptions') }}" class="subscriptions">SUBSCRIPTIONS</a>
+                <a href="{{ url_for('app_page') }}" class="app-page">APP</a>
+                <a href="{{ url_for('about_us') }}" class="about-us">ABOUT US</a>
+                <a href="{{ url_for('contact') }}" class="contact">CONTACT</a>
+            </div>
+        </header>
+        <p class="title">Contact us</p>
+        <div class="invisible-box-1">
+            <p class="p1">We'd love to hear from you</p>
+            <p class="p2">Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, sed do eiusmod 
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+            <img src="/static/images/location-pin.png" alt="Location Pin" class="location-pin">
+            <p class="p3">385 Noah Place Suite 878</p>
+            <img src="/static/images/telephone.png" alt="Telephone" class="telephone">
+            <p class="p4">877-255-7945</p>
+            <img src="/static/images/envelope.png" alt="Email icon" class="email">
+            <p class="p5">contact_support@parkco.com</p>
+        </div>
+
+        <div class="invisible-box-2">
+            <input type="text" class="email-field" name="email-field" placeholder="Email"/>
+            <select name="product" class="product">
+                <option value="" disabled selected>Select product</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="2">3</option>
+            </select>
+            <textarea class="comment" name="comment" cols="20" rows="10">Write something...</textarea>
+            <input class="submit" type="submit" name="submit" value="SUBMIT" />
+        </div>
+    </body>
+</html>
