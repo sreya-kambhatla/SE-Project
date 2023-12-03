@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // initalization of map
 var bingMap;
 // my API key
-const KEY = 'AnZmfnNOjVj5o61isXoOcep8SpaYqk3Tpye9-Mgu7iPCGjXntIKrNehxtWSUVzGe';
+const BINGKEY = 'AnZmfnNOjVj5o61isXoOcep8SpaYqk3Tpye9-Mgu7iPCGjXntIKrNehxtWSUVzGe';
+var locationString; // holds location like 'New York, NY' or just 'New York' as a city
 
-function initMap() {
-  var locationString; // holds locaton like 'New York, NY' or just 'New York' as a city
-  var locationValue = document.getElementById('flaskLocation').getAttribute('data-location');
+function getLocation() {
+  var locationValue = document.getElementById('flaskLocation').getAttribute('flaskLocation');
   var entry = document.getElementById('flaskLocation').getAttribute('userEntry');
 
-  console.log("1) locationValue:", locationValue, "entry:", entry);
-  if (entry !== 'True' ) {
+  console.log("locationValue:", locationValue, "entry:", entry);
+  if (entry === 'False') {
     // Set default values if Flask wasn't used
     locationValue = 'New York, NY';
     entry = 'False';
@@ -43,7 +43,6 @@ function initMap() {
     document.getElementById('location').value = locationValue;
   }
   locationString = locationValue;
-  console.log("2) locationValue:", locationValue, "entry:", entry);
   console.log("locationString", locationString);
 
   // function call to initiate map creation
@@ -54,11 +53,7 @@ const locationInput = document.getElementById('location');
 const updateSearchBtn = document.getElementById('update-search');
 const cancelText = document.getElementById('cancel');
 const searchContainer = document.querySelector('.search-container');
-
-console.log("LocationInput: ", locationInput);
-console.log("updateButton: ", updateSearchBtn);
-console.log("cancelText: ", cancelText);
-console.log("searchContainer: ", searchContainer);
+// can print out these variables if needed
 
   // making event for when the user changes the location
   // and presses enter/return 
@@ -101,7 +96,7 @@ console.log("searchContainer: ", searchContainer);
 // Function to get the URL for a given location
 function getURL(locationString) {
   // construct the URL in a different way as a string
-    return `https://dev.virtualearth.net/REST/v1/Locations/${locationString}?include=queryParse&o=json&key=${KEY}`;
+    return `https://dev.virtualearth.net/REST/v1/Locations/${locationString}?include=queryParse&o=json&key=${BINGKEY}`;
 }
 
 // function for creation or updating or map
@@ -116,7 +111,6 @@ function getMap(coordinates) {
   // either map will be created here or updated
   if (coordinates.latitude !== undefined && coordinates.longitude !== undefined) {
     // Check if the map is already initialized
-    console.log("MAP:", bingMap);
     if (bingMap !== undefined) {
       console.log("Map exists")
       // if map exists, update the map view without refreshing
@@ -127,13 +121,11 @@ function getMap(coordinates) {
     } else {
       console.log("Map creation")
       // Initialize the map with the initial coordinates
-      console.log('MAP:', bingMap)
       bingMap = new Microsoft.Maps.Map('#map', {
-        credentials: KEY,
+        credentials: BINGKEY,
         center: new Microsoft.Maps.Location(coordinates.latitude, coordinates.longitude),
         zoom: 12
       });
-      console.log('MAP:', bingMap)
     }
   } else {
     console.error('Invalid coordinates format for map update.');
@@ -195,4 +187,3 @@ fetch(requestURL)
   .then(handleData)
   .catch(handleError);
 }
-
