@@ -6,13 +6,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     hourlyBtn.addEventListener('click', function() {
       hourlyBtn.classList.add('active');
       monthlyBtn.classList.remove('active');
-      // Your existing code...
     });
   
     monthlyBtn.addEventListener('click', function() {
       monthlyBtn.classList.add('active');
       hourlyBtn.classList.remove('active');
-      // Your existing code...
+
     });
   });
 
