@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     monthlyBtn.classList.remove('active');
     startTime.style.display = 'inline-block';
     endTime.style.display = 'inline-block';
+
   });
 
   monthlyBtn.addEventListener('click', function() {
@@ -32,8 +33,9 @@ var locationString; // holds location like 'New York, NY' or just 'New York' as 
 function getLocation() {
   var locationValue = document.getElementById('flaskLocation').getAttribute('flaskLocation');
   var entry = document.getElementById('flaskLocation').getAttribute('userEntry');
-
+  var parking_spots = window.parkingSpotsData
   console.log("locationValue:", locationValue, "entry:", entry);
+  console.log("PARKING SPOT JS:", parking_spots)
   if (entry === 'False') {
     // Set default values if Flask wasn't used
     locationValue = 'New York, NY';
@@ -187,3 +189,38 @@ fetch(requestURL)
   .then(handleData)
   .catch(handleError);
 }
+
+function updateParkingContainer(parkingSpots, pricesData) {
+  var parkingContainer = document.getElementById('parking-container');
+  // Iterate over the outer array
+  for (var i = 0; i < parkingSpots.length; i++) {
+    // Iterate over the inner array for each outer array element
+    for (var j = 0; j < parkingSpots[i].length; j++) {
+      var spot = parkingSpots[i][j];
+
+      // Create the main div for the parking spot
+      var spotDiv = document.createElement('div');
+      spotDiv.classList.add('parking-spot');
+
+      // Create a div for the text content and apply the angled styling
+      var textDiv = document.createElement('div');
+      textDiv.classList.add('parking-spot-text');
+      
+      // Correspond the spot to the price at the same index
+      textDiv.innerHTML = spot.name + '<br>' + spot.address + '<br>' + 'Price: $' + pricesData[i];
+
+      // Append the text div to the main spot div
+      spotDiv.appendChild(textDiv);
+
+      // Append the spot div to the parking container
+      parkingContainer.appendChild(spotDiv);
+    }
+  }
+}
+
+// Update parking container with new data
+updateParkingContainer(window.parkingSpotsData, window.pricesData);
+
+
+// Update parking container with new data
+updateParkingContainer(window.parkingSpotsData, window.pricesData);
