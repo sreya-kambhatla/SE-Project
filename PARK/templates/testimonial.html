@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Existing head content -->
+</head>
+<body>
+    <!-- Swiper Container -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper" id="testimonialWrapper">
+            <!-- Testimonials will be loaded here -->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Feedback Form -->
+    <!-- Existing feedback form content -->
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Load testimonials from the server
+        function loadTestimonials() {
+            $.get('http://localhost:5000/getTestimonials', function(data) {
+                data.forEach(testimonial => {
+                    $('#testimonialWrapper').append(
+                        `<div class="swiper-slide">
+                            <p class="testimonial-text">"${testimonial.text}"</p>
+                            <h3 class="author">- ${testimonial.author}</h3>
+                        </div>`
+                    );
+                });
+                new Swiper('.mySwiper', { /* Swiper configuration */ });
+            });
+        }
+
+        // Submit feedback form
+        $('#testimonialFeedbackForm').on('submit', function(e) {
+            e.preventDefault();
+            var testimonial = {
+                text: $('#feedback').val(),
+                author: $('#name').val()
+            };
+            $.post('http://localhost:5000/addTestimonial', testimonial, function(response) {
+                $('#formResponse').text(response.message);
+                $('#testimonialFeedbackForm')[0].reset();
+                loadTestimonials();
+            });
+        });
+
+        loadTestimonials();
+    </script>
+</body>
+</html>
