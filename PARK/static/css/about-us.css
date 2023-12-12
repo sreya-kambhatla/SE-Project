@@ -10,7 +10,7 @@
     align-items: center;
   }
   
-  .home, .testimonials, .subscriptions, .app-page, .about-us, .contact {
+  .home, .testimonials, .app-page, .about-us, .contact {
     display: inline-block;
     width: auto;
     font-size: 13px;
