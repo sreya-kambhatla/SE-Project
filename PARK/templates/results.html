@@ -13,7 +13,6 @@
       <div class="header-box">
         <a href="{{ url_for('index') }}" class="home">HOME</a>
         <a href="{{ url_for('testimonials') }}" class="testimonials">TESTIMONIALS</a>
-        <a href="{{ url_for('subscriptions') }}" class="subscriptions">SUBSCRIPTIONS</a>
         <a href="{{ url_for('app_page') }}" class="app-page">APP</a>
         <a href="{{ url_for('about_us') }}" class="about-us">ABOUT US</a>
         <a href="{{ url_for('contact') }}" class="contact">CONTACT</a>
@@ -36,7 +35,17 @@
                     if a location was entered and '{{ flaskLocation}}''
                     string literal if nothing was entered-->
                     <p id="flaskLocation" style="display: none;" 
-                    flaskLocation="{{ flaskLocation }}" userEntry ="{{ userEntry }}"></p>
+                        flaskLocation="{{ flaskLocation }}" userEntry="{{ userEntry }}" 
+                        parking_spots="{{ parking_spots | tojson | safe }}"
+                        prices="{{ prices }}"></p>
+                    <script>
+                        // Set a JavaScript variable with the parking_spots data
+                        var parkingSpotsData = JSON.parse('{{ parking_spots | safe }}');                        var pricesArray = JSON.parse('{{ prices }}');
+                        var pricesArray = JSON.parse('{{ prices }}');
+                        console.log(pricesArray);
+                        window.parkingSpotsData = parkingSpotsData;
+                        window.pricesData = pricesArray;
+                    </script>
                 </div>
                 <div class="time-container">
                     <div class="left-text">Arrive By</div>
@@ -54,6 +63,7 @@
                 <p id="cancel" class="hidden">Cancel</p>
             </div>
             <div id="parking-container">
+
             </div>
         </div> 
         <div id="map">
