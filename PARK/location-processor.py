@@ -1,18 +1,17 @@
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 import os
 from dotenv import load_dotenv
 from datetime import *
 import json
-
+import certifi
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
 
 load_dotenv()
 uri = os.getenv("MONGODB_ATLAS_URI")
-client = MongoClient(uri, server_api=ServerApi('1'))
+client = MongoClient(uri, tlsCAFile=certifi.where())
 
 @app.route('/')
 def index():
