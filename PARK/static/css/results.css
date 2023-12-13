@@ -10,7 +10,7 @@
     align-items: center;
   }
   
-  .home, .testimonials, .subscriptions, .app-page, .about-us, .contact {
+  .home, .testimonials, .app-page, .about-us, .contact {
     display: inline-block;
     width: auto;
     font-size: 13px;
@@ -252,10 +252,22 @@ body {
     background-color: rgba(255, 255, 255);
     width: 90%;
     display: flex;
+    flex-direction: column;
     position: relative;
-    overflow: auto;
     flex: 1;
     margin-left: 5%;
     border-radius: 3%;
-    overflow: hidden;
+    overflow: auto;
+}
+
+.parking-spot {
+    width: 100%; 
+    min-height: 25%;
+    border: 1px solid black;
+    padding-top: 20px; 
+    overflow: hidden; 
+}
+
+.parking-spot-text {
+    
 }
