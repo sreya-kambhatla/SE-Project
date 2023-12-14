@@ -40,7 +40,7 @@
                         prices="{{ prices }}"></p>
                     <script>
                         // Set a JavaScript variable with the parking_spots data
-                        var parkingSpotsData = JSON.parse('{{ parking_spots | safe }}');                        var pricesArray = JSON.parse('{{ prices }}');
+                        var parkingSpotsData = JSON.parse('{{ parking_spots | safe }}'); 
                         var pricesArray = JSON.parse('{{ prices }}');
                         console.log(pricesArray);
                         window.parkingSpotsData = parkingSpotsData;
