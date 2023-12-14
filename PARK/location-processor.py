@@ -202,61 +202,61 @@ def pricing(result, time_duration, day_of_week, park_start, park_end, time_durat
                         spots.append(result_json)
                         prices.append(morning_prices.get('all'))
                         count += 1
+                    else:
+                        print("2 MORNING START IS", len(morning_start))
+                        if park_start >= morning_start[0] and park_start <= morning_start[1] and park_end <= morning_end[0]:
+                            print(count, "MORNING 1.5: ", result_json.get('name', ''))
+                            got_deal = True
+                            spots.append(result_json)
+                            prices.append(morning_prices.get('all'))
+                            count += 1
                 else:
-                    print("2 MORNING START IS", len(morning_start))
-                    if park_start >= morning_start[0] and park_start <= morning_start[1] and park_end <= morning_end[0]:
-                        print(count, "MORNING 1.5: ", result_json.get('name', ''))
+                    print("MORNING PRICE IS ", len(morning_prices))
+                    if len(morning_start) < 2:
+                        print("3 MORNING START IS", len(morning_start))
+                        if park_start <= morning_start[0] and park_end <= morning_end[0]:
+                            print(count, "MORNING 2: ", result_json.get('name', ''))
+                            got_deal = True
+                            spots.append(result_json)
+                            prices.append(morning_prices.get(f'{day_of_week}'))
+                            count += 1
+                    else:
+                        print(" 4 MORNING START IS", len(morning_start))
+                        if park_start >= morning_start[0] and park_start <= morning_start[1] and park_end <= morning_end[0]:
+                            print(count, "MORNING 2.5: ", result_json.get('name', ''))
+                            got_deal = True
+                            spots.append(result_json)
+                            prices.append(morning_prices.get(f'{day_of_week}'))
+                            count += 1
+                            
+            # check for evening deal
+            elif evening_prices and time_duration_seconds < 86400:
+                print("in evening")
+                if len(evening_prices) < 2:
+                    if park_start >= evening_start[0] and park_end <= evening_end[0] :
                         got_deal = True
+                        print("EVENING 1: ", result_json.get('name', ''))
                         spots.append(result_json)
-                        prices.append(morning_prices.get('all'))
-                        count += 1
-            else:
-                print("MORNING PRICE IS ", len(morning_prices))
-                if len(morning_start) < 2:
-                    print("3 MORNING START IS", len(morning_start))
-                    if park_start <= morning_start[0] and park_end <= morning_end[0]:
-                        print(count, "MORNING 2: ", result_json.get('name', ''))
-                        got_deal = True
-                        spots.append(result_json)
-                        prices.append(morning_prices.get(f'{day_of_week}'))
-                        count += 1
+                        prices.append(morning_prices.get(f"{day_of_week}"))
                 else:
-                    print(" 4 MORNING START IS", len(morning_start))
-                    if park_start >= morning_start[0] and park_start <= morning_start[1] and park_end <= morning_end[0]:
-                        print(count, "MORNING 2.5: ", result_json.get('name', ''))
+                    if park_start >= evening_start[0] and park_end <= evening_prices.get(f"{day_of_week}"):
                         got_deal = True
+                        print("EVENING 2: ", result_json.get('name', ''))
                         spots.append(result_json)
-                        prices.append(morning_prices.get(f'{day_of_week}'))
-                        count += 1
-
-        # check for evening deal
-        elif evening_prices and time_duration_seconds < 86400:
-            print("in evening")
-            if len(evening_prices) < 2:
-                if park_start >= evening_start[0] and park_end <= evening_end[0] :
-                    got_deal = True
-                    print("EVENING 1: ", result_json.get('name', ''))
-                    spots.append(result_json)
-                    prices.append(morning_prices.get(f"{day_of_week}"))
-            else:
-                if park_start >= evening_start[0] and park_end <= evening_prices.get(f"{day_of_week}"):
-                    got_deal = True
-                    print("EVENING 2: ", result_json.get('name', ''))
-                    spots.append(result_json)
-                    prices.append(morning_prices.get(f"{day_of_week}"))
+                        prices.append(morning_prices.get(f"{day_of_week}"))
 
 
-        # Regular parking prices
-        elif got_deal == False:
-            print("in regular")
-            for hours in reg_park_prices:
-                if time_duration_float <= float(hours):
-                    print("REGULAR: ", result_json.get('name', ''))
-                    spots.append(result_json)
-                    prices.append(reg_park_prices.get(hours))
-                    break
+            # Regular parking prices
+            elif got_deal == False:
+                print("in regular")
+                for hours in reg_park_prices:
+                    if time_duration_float <= float(hours):
+                        print("REGULAR: ", result_json.get('name', ''))
+                        spots.append(result_json)
+                        prices.append(reg_park_prices.get(hours))
+                        break
 
-    return spots, prices
+        return spots, prices
 
     
 atexit.register(lambda: client.close())
