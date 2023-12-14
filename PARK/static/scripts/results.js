@@ -191,6 +191,7 @@ fetch(requestURL)
 }
 
 function updateParkingContainer(parkingSpots, pricesData) {
+  console.log('Updating parking container with data:', parkingSpots, pricesData);
   var parkingContainer = document.getElementById('parking-container');
   // Iterate over the outer array
   for (var i = 0; i < parkingSpots.length; i++) {
