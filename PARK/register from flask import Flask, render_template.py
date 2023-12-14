@@ -3,6 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from forms import RegistrationForm, LoginForm
 from models import User
+from flask_bcrypt import Bcrypt
+
+# Initialize Bcrypt
+bcrypt = Bcrypt(app)
 
 app = Flask(__name__)
 
