@@ -36,15 +36,16 @@
                     string literal if nothing was entered-->
                     <p id="flaskLocation" style="display: none;" 
                         flaskLocation="{{ flaskLocation }}" userEntry="{{ userEntry }}" 
-                        parking_spots="{{ parking_spots | tojson | safe }}"
-                        prices="{{ prices }}"></p>
+                        spots="{{ spots | tojson | safe }}"
+                        prices="{{ prices | tojson | safe }}"></p>
                     <script>
-                        // Set a JavaScript variable with the parking_spots data
-                        var parkingSpotsData = JSON.parse('{{ parking_spots | safe }}'); 
-                        var pricesArray = JSON.parse('{{ prices }}');
-                        console.log(pricesArray);
+                        // Set a JavaScript variable with the spots data
+                        var parkingSpotsData = JSON.parse('{{ spots | tojson | safe }}'); 
+                        var pricesData = JSON.parse('{{ prices | tojson | safe }}');
+                        console.log("parking spots: ", parkingSpotsData)
+                        console.log("prices: ", pricesData);
                         window.parkingSpotsData = parkingSpotsData;
-                        window.pricesData = pricesArray;
+                        window.pricesData = pricesData;
                     </script>
                 </div>
                 <div class="time-container">
