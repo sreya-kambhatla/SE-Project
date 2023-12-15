@@ -38,29 +38,29 @@ body {
   }
   
   .center-box {
-    width: 700px;
-    height: 460px;
+    justify-content: center;
+    width: 54%;
+    height: 75vh;
     background-color: rgba(255, 255, 255, 0.85);
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    margin-top: 3vh; 
+    margin-left: 45vh;
+    top: 6.5vh;
+    left: .5%;
     border: 1px solid #ccc;
-    border-radius: 5px; 
+    border-radius: 1%; 
   }
   
   .small-box {
     background-color: rgba(255, 255, 255, 0.85);
+    width: 27%;
+    height: 44%;
     position: absolute;
-    width: 350px;
-    height: 275px;
-    top: 57%;
-    left: 50%;
     text-align: center;
-    margin-top: -137.5px;
-    margin-left: -175px;
+    top: 36vh;
+    left: 36%;
     border: 1px solid white;
-    border-radius: 2px; 
+    border-radius: 1%; 
     padding-left: 1%;
     padding-right: 1%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -71,7 +71,6 @@ body {
   margin: 0;
   height: 9%;
   text-align: left;
-  margin-top: -4%;
   margin-bottom: 3%;
   width: 97%;
   border-bottom: 2px solid #ccc;
@@ -99,7 +98,7 @@ body {
     content: "";
     position: absolute;
     width: 0; /* Start with width of 0 */
-    height: 2px;
+    height: 12%;
     bottom: -60%;
     background-color: rgba(0,132,71,255);
     transition: width 0.3s ease; /* Animate the width */
@@ -137,18 +136,19 @@ body {
   }
   
   #input-field {
-    width: 300px;
+    width: 80%;
     height: 30px;
     background-color: white;
     position: relative;
     padding-left: 30px;
     border: 1px solid #ccc;
     border-radius: 2px; 
+    margin-top: 0%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
   .search-icon {
-    width: 20px; 
+    width: 5%; 
     height: 20px; 
     position: absolute;
     top: 50%;
@@ -245,7 +245,7 @@ body {
     color: white;
     font-size: 20px;
     position: absolute;
-    top: 84%;
+    top: 86%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 200px;
