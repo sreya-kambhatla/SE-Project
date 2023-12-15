@@ -1,126 +1,25 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-/* Header Styles */
-.site-header {
-    background-color: #ffffff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.company-logo {
-    height: 50px; /* Adjust based on your logo */
-}
-
-.navigation a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 20px;
-    font-weight: bold;
-}
-
-/* Testimonials Container */
-.testimonial-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.testimonial-header h1 {
-    text-align: center;
-    color: #333;
-}
-
-/* Testimonials */
-.testimonial {
-    padding: 20px;
-    border-bottom: 1px solid #ddd; /* Separates each testimonial */
-}
-
-.testimonial:last-child {
-    border-bottom: none; /* Removes border from the last testimonial */
-}
-
-.testimonial-quote {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-}
-
-.author-image {
-    width: 60px; /* Adjust to make images smaller */
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-.author-info p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #f8f8f8;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .navigation a {
-        margin-left: 10px;
-        font-size: 0.9em;
-    }
-
-    .testimonial-author {
-        flex-direction: column;
-        align-items: start;
-    }
-
-    .author-image {
-        margin-bottom: 10px;
-    }
-}
-/* General Styles */
-body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f9; /* A soft background color */
     color: #333;
+    line-height: 1.6;
 }
 
 /* Header Styles */
 .site-header {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .company-logo {
-    height: 50px; /* Adjust based on your logo */
+    height: 50px;
 }
 
 .navigation a {
@@ -128,35 +27,44 @@ body {
     color: #333;
     margin-left: 20px;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #007bff; /* Highlight color on hover */
 }
 
 /* Testimonials Container */
 .testimonial-container {
     max-width: 800px;
-    margin: auto;
+    margin: 40px auto;
     padding: 20px;
-    background-color: #ffffff; /* Light background for the container */
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px; /* Rounded corners */
 }
 
 .testimonial-header h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 30px; /* Added space below header */
 }
 
 /* Testimonials */
 .testimonial {
-    background-color: #e7f1ff; /* Light blue background for each testimonial */
+    background-color: #eef2f7; /* Light blue background for each testimonial */
     padding: 20px;
     border-radius: 10px; /* Rounded corners for testimonials */
     margin-bottom: 15px;
-    border: 1px solid #d1e3f8; /* Light border for testimonials */
+    border-left: 4px solid #007bff; /* Accent border */
+    position: relative;
 }
 
 .testimonial-quote {
     font-style: italic;
     color: #555;
     margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
 .testimonial-author {
@@ -165,16 +73,18 @@ body {
 }
 
 .author-image {
-    width: 60px; /* Adjust to make images smaller */
+    width: 60px;
     height: 60px;
     border-radius: 50%;
     margin-right: 15px;
     object-fit: cover;
+    border: 2px solid #007bff; /* Border around author image */
 }
 
 .author-info p {
     margin: 0;
     padding: 0;
+    font-weight: bold;
 }
 
 /* Footer Styles */
@@ -199,5 +109,9 @@ footer {
 
     .author-image {
         margin-bottom: 10px;
+    }
+
+    .testimonial-container {
+        margin: 20px auto;
     }
 }
