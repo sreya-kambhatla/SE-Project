@@ -1,54 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Existing head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PARK/static/css/testimonials.css">
+    <title>Testimonials</title>
 </head>
 <body>
-    <!-- Swiper Container -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper" id="testimonialWrapper">
-            <!-- Testimonials will be loaded here -->
+    <header class="site-header">
+        <img src="PARK/static/images/logo.jpg" alt="Company Logo" class="company-logo">
+        <nav class="navigation">
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <!-- Testimonials container -->
+    <div class="testimonial-container">
+        <div class="testimonial-header">
+            <h1>Parking Lot Feedback Testimonials</h1>
         </div>
-        <div class="swiper-pagination"></div>
+        <!-- Testimonial slider and content here -->
     </div>
+    
+    <!-- Your existing footer -->
+    <footer>
+        <!-- Footer content -->
+    </footer>
 
-    <!-- Feedback Form -->
-    <!-- Existing feedback form content -->
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // Load testimonials from the server
-        function loadTestimonials() {
-            $.get('http://localhost:5000/getTestimonials', function(data) {
-                data.forEach(testimonial => {
-                    $('#testimonialWrapper').append(
-                        `<div class="swiper-slide">
-                            <p class="testimonial-text">"${testimonial.text}"</p>
-                            <h3 class="author">- ${testimonial.author}</h3>
-                        </div>`
-                    );
-                });
-                new Swiper('.mySwiper', { /* Swiper configuration */ });
-            });
-        }
-
-        // Submit feedback form
-        $('#testimonialFeedbackForm').on('submit', function(e) {
-            e.preventDefault();
-            var testimonial = {
-                text: $('#feedback').val(),
-                author: $('#name').val()
-            };
-            $.post('http://localhost:5000/addTestimonial', testimonial, function(response) {
-                $('#formResponse').text(response.message);
-                $('#testimonialFeedbackForm')[0].reset();
-                loadTestimonials();
-            });
-        });
-
-        loadTestimonials();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PARK/static/css/testimonials.css">
+    <title>Testimonials</title>
+</head>
+<body>
+    
+        <div class="testimonial-slider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial slide">
+                <blockquote class="testimonial-quote">
+                    “The parking lot is very well-lit at night, which makes me feel secure when I return to my car after evening activities.”
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="PARK/static/images/yanzu.jpeg" alt="Author 1" class="author-image">
+                    <div class="author-info">
+                        <p class="author-name">YanZu</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for each testimonial -->
+        </div>
+    </div>
+
+</body>
+</html>
+<!-- Inside your <div class="testimonial-slider"> -->
+
+<!-- Testimonial 2 -->
+<div class="testimonial slide">
+    <blockquote class="testimonial-quote">
+        “The electronic signage showing available spots on each level is a game-changer—saves so much time!”
+    </blockquote>
+    <div class="testimonial-author">
+        <img src="PARK/static/images/dehua.jpeg" " class="author-image">
+        <div class="author-info">
+            <p class="author-name">DeHua</p>
+            </div>
+    </div>
+</div>
+
+<!-- Testimonial 3 -->
+<div class="testimonial slide">
+    <blockquote class="testimonial-quote">
+        “The parking lot is always clean and well-maintained; it's nice to see that management takes good care of it.”
+    </blockquote>
+    <div class="testimonial-author">
+        <img src="PARK/static/images/kira.jpeg" alt="Author 3" class="author-image">
+        <div class="author-info">
+            <p class="author-name">Samira</p>
+           
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial 4 -->
+<div class="testimonial slide">
+    <blockquote class="testimonial-quote">
+        “I'm impressed with the security measures in the parking lot; it gives me peace of mind.”
+    </blockquote>
+    <div class="testimonial-author">
+        <img src="PARK/static/images/samira.jpeg" alt="Author 4" class="author-image">
+        <div class="author-info">
+            <p class="author-name">YiFei</p>
+          
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial 5 -->
+<div class="testimonial slide">
+    <blockquote class="testimonial-quote">
+        “The clear and bright floor markings make navigation a breeze, even when it's crowded.”
+    </blockquote>
+    <div class="testimonial-author">
+        <img src="PARK/static/images/yifei.jpeg" alt="Author 5" class="author-image">
+        <div class="author-info">
+            <p class="author-name">Kira</p>
+      
+        </div>
+    </div>
+</div>
+
+<!-- More testimonials can be added following the same structure -->
+
