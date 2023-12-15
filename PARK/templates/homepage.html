@@ -3,21 +3,20 @@ homepage/landing page for Park Company's website-->
 
 <!DOCTYPE html>
 <html>
+  <header>
+    <!-- top header menu for 
+    navigating through the different
+    site through links-->
+    <!-- NOTE: header might not be hardcoded later on-->
+    <div class="header-box">
+      <a href="{{ url_for('index') }}" class="home">HOME</a>
+      <a href="{{ url_for('testimonials') }}" class="testimonials">TESTIMONIALS</a>
+      <a href="{{ url_for('app_page') }}" class="app-page">APP</a>
+      <a href="{{ url_for('about_us') }}" class="about-us">ABOUT US</a>
+      <a href="{{ url_for('contact') }}" class="contact">CONTACT</a>
+    </div>
+  </header>
   <body>
-    <header>
-      <!-- top header menu for 
-      navigating through the different
-      site through links-->
-      <!-- NOTE: header might not be hardcoded later on-->
-      <div class="header-box">
-        <a href="{{ url_for('index') }}" class="home">HOME</a>
-        <a href="{{ url_for('testimonials') }}" class="testimonials">TESTIMONIALS</a>
-        <a href="{{ url_for('app_page') }}" class="app-page">APP</a>
-        <a href="{{ url_for('about_us') }}" class="about-us">ABOUT US</a>
-        <a href="{{ url_for('contact') }}" class="contact">CONTACT</a>
-      </div>
-    
-    </header>
     <!-- link to css for homepage-->
     <link rel="stylesheet" type="text/css" href="/static/css/homepage.css">
     <!-- creating large center transparent white box
