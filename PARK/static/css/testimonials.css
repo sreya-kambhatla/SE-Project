@@ -14,7 +14,7 @@
     font-family: 'Cursive', sans-serif;
     font-size: 2em;
     color: #ff69b4; /* Keep the text color for contrast */
-    background-image: url('/Users/heshenliu/Downloads/testimonal car back ground.jpeg'); /* Path to your background image */
+    background-image: url('PARK/static/images/testimonal car back ground.jpeg'); /* Path to background image */
     background-size: cover; /* Ensure the image covers the entire area */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
