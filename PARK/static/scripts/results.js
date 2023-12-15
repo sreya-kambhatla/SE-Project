@@ -34,8 +34,8 @@ function getLocation() {
   var locationValue = document.getElementById('flaskLocation').getAttribute('flaskLocation');
   var entry = document.getElementById('flaskLocation').getAttribute('userEntry');
   var parking_spots = window.parkingSpotsData
+  var prices = window.pricesData
   console.log("locationValue:", locationValue, "entry:", entry);
-  console.log("PARKING SPOT JS:", parking_spots)
   if (entry === 'False') {
     // Set default values if Flask wasn't used
     locationValue = 'New York, NY';
@@ -48,7 +48,7 @@ function getLocation() {
   console.log("locationString", locationString);
 
   // function call to initiate map creation
-  processing(locationString);
+  processing(locationString, parking_spots, prices);
 }
 //this code section is for the Update Search and Cancel buttons 
 const locationInput = document.getElementById('location');
@@ -179,49 +179,68 @@ function getCoord(data) {
 function that essentially handles turning
 city,state to coord, to use coord to create map.
 */
-function processing(locationString) {
+function processing(locationString, parking_spots, prices) {
   let requestURL = getURL(locationString);
   console.log('URL: ', requestURL);
+  console.log("parking data: ", parking_spots, prices)
 
 // Make an asynchronous request using fetch 
 fetch(requestURL)
   .then(handleResponse) 
   .then(handleData)
   .catch(handleError);
+
+updateParkingContainer(parking_spots, prices)
 }
 
-function updateParkingContainer(parkingSpots, pricesData) {
-  console.log('Updating parking container with data:', parkingSpots, pricesData);
+function updateParkingContainer(parking_spots, prices) {
+  console.log('Updating parking container with data:', parking_spots, prices);
   var parkingContainer = document.getElementById('parking-container');
-  // Iterate over the outer array
-  for (var i = 0; i < parkingSpots.length; i++) {
-    // Iterate over the inner array for each outer array element
-    for (var j = 0; j < parkingSpots[i].length; j++) {
-      var spot = parkingSpots[i][j];
+  
+  for (let i = 0; i < parking_spots.length; i++) {
+    const parkingSpot = parking_spots[i];
+    const name = parkingSpot.name;
+    const address = parkingSpot.address;
 
-      // Create the main div for the parking spot
-      var spotDiv = document.createElement('div');
-      spotDiv.classList.add('parking-spot');
+    const pricesData = prices[i];
+    const price = pricesData[1];
 
-      // Create a div for the text content and apply the angled styling
-      var textDiv = document.createElement('div');
-      textDiv.classList.add('parking-spot-text');
-      
-      // Correspond the spot to the price at the same index
-      textDiv.innerHTML = spot.name + '<br>' + spot.address + '<br>' + 'Price: $' + pricesData[i];
+    // Create the main div for the parking spot
+    var spotDiv = document.createElement('div');
+    spotDiv.classList.add('parking-spot');
 
-      // Append the text div to the main spot div
-      spotDiv.appendChild(textDiv);
+    var topLine = document.createElement('div')
+    topLine.classList.add('topLine')
+    // Create and append divs for name, price, and address directly inside the main spot div
+    var nameDiv = document.createElement('div');
+    nameDiv.classList.add('parking-spot-name');
+    nameDiv.innerText = name;
+    topLine.appendChild(nameDiv);
 
-      // Append the spot div to the parking container
-      parkingContainer.appendChild(spotDiv);
-    }
+    var priceDiv = document.createElement('div');
+    priceDiv.classList.add('parking-spot-price');
+
+    // Create and append divs for dollar sign and price inside the priceDiv
+    var dollarSignDiv = document.createElement('div');
+    dollarSignDiv.classList.add('dollar-sign');
+    dollarSignDiv.innerText = '$';
+    
+    var priceValueDiv = document.createElement('div');
+    priceValueDiv.classList.add('price');
+    priceValueDiv.innerText = price;
+    
+    // Append both dollar sign and price to the topLine div
+    topLine.appendChild(dollarSignDiv);
+    topLine.appendChild(priceValueDiv);
+    spotDiv.appendChild(topLine)
+
+    var addressDiv = document.createElement('div');
+    addressDiv.classList.add('address');
+    addressDiv.innerText = address;
+    spotDiv.appendChild(addressDiv);
+
+    // Append the spot div to the parking container
+    parkingContainer.appendChild(spotDiv);
   }
 }
 
-// Update parking container with new data
-updateParkingContainer(window.parkingSpotsData, window.pricesData);
-
-
-// Update parking container with new data
-updateParkingContainer(window.parkingSpotsData, window.pricesData);
